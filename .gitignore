@@ -1,1 +1,31 @@
+# Check what's in your .gitignore files
+cat .gitignore
+cat backend/.gitignore 2>/dev/null || echo "No backend/.gitignore"
+cat fronted/.gitignore
+```
+
+Your `.gitignore` should contain:
+```
+# Environment files
 .env
+.env.local
+backend/.env
+fronted/.env
+
+# Dependencies
+node_modules/
+backend/node_modules/
+fronted/node_modules/
+
+# Build files
+backend/dist/
+fronted/dist/
+fronted/build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
