@@ -7,8 +7,6 @@ cat fronted/.gitignore
 Your `.gitignore` should contain:
 ```
 # Environment files
-.env
-.env.local
 backend/.env
 fronted/.env
 
@@ -29,3 +27,4 @@ npm-debug.log*
 # OS files
 .DS_Store
 Thumbs.db
+config.bat
