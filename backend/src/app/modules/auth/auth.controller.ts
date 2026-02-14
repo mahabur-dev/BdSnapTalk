@@ -4,10 +4,9 @@ import sendResponse from '../../utils/sendResponse';
 import { authService } from './auth.service';
 
 const registerUser = catchAsync(async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
+  const { fullName, email, password } = req.body;
   const result = await authService.registerUser({
-    firstName,
-    lastName,
+    fullName,
     email,
     password,
   });

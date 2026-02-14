@@ -18,8 +18,9 @@ export const useUsers = () => {
   const usersQuery = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const response = await fetchAPI("/auth/users")
-      return (response.data || []).map((user: any) => ({
+      const response = await fetchAPI("/user/all-user");
+      console.log(response?.data);
+      return (response?.data || []).map((user: any) => ({
         id: user._id,
         _id: user._id,
         name: user.fullName,

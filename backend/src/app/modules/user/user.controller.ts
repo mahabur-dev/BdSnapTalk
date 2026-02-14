@@ -14,9 +14,10 @@ const createUser = catchAsync(async (req, res) => {
 });
 
 const getAllUser = catchAsync(async (req, res) => {
+  const userId = req.user.id;
   const filters = pick(req.query, ['searchTerm', 'role', 'name', 'email']);
   const options = pick(req.query, ['page', 'limit', 'sortBy', 'sortOrder']);
-  const result = await userService.getAllUser(filters, options);
+  const result = await userService.getAllUser(filters, options, userId);
   sendResponse(res, {
     statusCode: 200,
     success: true,

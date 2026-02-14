@@ -13,7 +13,7 @@ const createUser = async (payload: IUser) => {
   return result;
 };
 
-const getAllUser = async (params: any, options: IOption) => {
+const getAllUser = async (params: any, options: IOption, userId:String) => {
   const { page, limit, skip, sortBy, sortOrder } = pagination(options);
   const { searchTerm, ...filterData } = params;
 
@@ -35,10 +35,16 @@ const getAllUser = async (params: any, options: IOption) => {
       })),
     });
   }
+  
+  //without login user
+  andCondition.push({
+    _id: { $ne: userId },
+  });
 
   const whereCondition = andCondition.length > 0 ? { $and: andCondition } : {};
 
   const result = await User.find(whereCondition)
+    .select('-password')
     .skip(skip)
     .limit(limit)
     .sort({ [sortBy]: sortOrder } as any);
