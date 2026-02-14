@@ -37,7 +37,7 @@
     "nodemailer": "^7.0.5",
     "puppeteer": "^24.34.0",
     "puppeteer-core": "^24.34.0",
-    "socket.io": "^4.8.1",
+    "socket.io": "^4.8.3",
     "streamifier": "^0.1.1",
     "stripe": "^19.1.0",
     "typescript": "^5.9.2",
