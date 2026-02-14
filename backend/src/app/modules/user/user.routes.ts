@@ -21,7 +21,7 @@ router.put(
   userController.updatedMyProfile,
 );
 
-router.get('/all-user', auth(userRole.admin), userController.getAllUser);
+router.get('/all-user',auth(userRole.user), userController.getAllUser);
 router.get('/:id', auth(userRole.admin), userController.getUserById);
 
 router.delete('/:id', auth(userRole.admin), userController.deleteUserById);

@@ -19,7 +19,7 @@ app.use('/invoices', express.static(path.join(process.cwd(), 'public', 'invoices
 
 
 // Application routes (Centralized router)
-app.use('/api/v1', router);
+app.use('/api', router);
 
 
 // Root router
